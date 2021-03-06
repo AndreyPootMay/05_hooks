@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './effects.css'
+import { Message } from './Message';
 export const SimpleForm = () => {
 
     const [formState, setFormState] = useState({
@@ -10,18 +11,18 @@ export const SimpleForm = () => {
     const { name, email } = formState;
 
     useEffect(() => {
-        console.log('all the component change!');
+        // console.log('all the component change!');
     });
 
     useEffect(() => {
-        console.log('complete form changes!');
+        // console.log('complete form changes!');
     }, [formState]);
 
     useEffect(() => {
-        console.log('email changes!');
+        // console.log('email changes!');
     }, [email]);
 
-    const handleInputChange = ({target}) => {
+    const handleInputChange = ({ target }) => {
         setFormState({
             ...formState,
             [target.name]: target.value
@@ -34,26 +35,28 @@ export const SimpleForm = () => {
 
             <div className="form-group">
                 <input type="text"
-                name="name"
-                className="form-control"
-                placeholder="Your name"
-                autoComplete="off"
-                value={name}
-                onChange={handleInputChange}
+                    name="name"
+                    className="form-control"
+                    placeholder="Your name"
+                    autoComplete="off"
+                    value={name}
+                    onChange={handleInputChange}
                 />
             </div>
 
 
             <div className="form-group">
                 <input type="text"
-                name="email"
-                className="form-control"
-                placeholder="info@email.com"
-                autoComplete="off"
-                value={email}
-                onChange={handleInputChange}
+                    name="email"
+                    className="form-control"
+                    placeholder="info@email.com"
+                    autoComplete="off"
+                    value={email}
+                    onChange={handleInputChange}
                 />
             </div>
+
+            {name === '123' && <Message />}
         </>
     )
 }
