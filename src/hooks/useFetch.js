@@ -27,11 +27,14 @@ export const useFetch = (url) => {
                         loading: false,
                         error: null
                     });
-                } else {
-                    console.log(
-                        `The component ain't rendered`
-                    );
                 }
+            })
+            .catch(() => {
+                setState({
+                    data: null,
+                    loading: false,
+                    error: `Data can't be loaded`
+                })
             })
     }, [url]);
 

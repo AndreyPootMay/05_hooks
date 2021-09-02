@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing RealExampleRef should show correctly 1`] = `
+<div>
+  <button
+    className="btn btn-primary mt-5"
+    onClick={[Function]}
+  >
+    Show component!
+  </button>
+</div>
+`;
